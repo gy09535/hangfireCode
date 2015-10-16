@@ -20,7 +20,7 @@ namespace HangfireDemo
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)  
         {
             string baseAddress = ConfigurationManager.AppSettings["siteIp"];
             var helper = new MQHelper();
