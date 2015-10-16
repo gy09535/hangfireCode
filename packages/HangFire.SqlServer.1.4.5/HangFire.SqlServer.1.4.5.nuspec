@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>HangFire.SqlServer</id>
+    <version>1.4.5</version>
+    <title>Hangfire SQL Server Storage</title>
+    <authors>Sergey Odinokov</authors>
+    <owners>Sergey Odinokov</owners>
+    <licenseUrl>https://raw.github.com/HangfireIO/Hangfire/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://hangfire.io/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SQL Server 2008+ (including Express), SQL Server LocalDB and SQL Azure storage support for Hangfire (background job system for ASP.NET applications).</description>
+    <releaseNotes>https://github.com/HangfireIO/Hangfire/releases
+    
+1.4.3
+* Fixed – SQL Server storage does not work with case-sensitive and binary collations (by @ilessa).
+* Fixed – "Incorrect syntax near 'MERGE'" error in `CountersAggregator` component.
+
+1.4.0
+* Added – Ability to pass isolation level to use in transactions, default is `serializable`.
+* Added – Make the expiration check interval configurable (by @travisblakeney).
+* Changed – Use read committed or parent transaction isolation level instead of `serializable`.
+* Changed – Automatically aggregate records in `Hangfire.Counter` table.
+* Changed – Add indexes to prevent blocking rows by Expiration Manager.
+* Changed – Remove the `with tablock` hint from the expiration cleanup (by @travisblakeney).
+* Changed – Don't pass IsolationLevel to TransactionScope by default.
+* Changed – Coarse grained locks for Hash, List and Set tables to prevent deadlocks.
+* Fixed – Retry on deadlocks during automatic migration on server restart.</releaseNotes>
+    <copyright>Copyright © 2013-2015 Sergey Odinokov</copyright>
+    <tags>Hangfire SqlServer SqlAzure LocalDB</tags>
+    <dependencies>
+      <dependency id="Hangfire.Core" version="[1.4.5]" />
+    </dependencies>
+  </metadata>
+</package>
